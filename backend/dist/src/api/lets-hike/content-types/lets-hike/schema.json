@@ -1,0 +1,28 @@
+{
+    "kind": "singleType",
+    "collectionName": "lets_hikes",
+    "info": {
+        "singularName": "lets-hike",
+        "pluralName": "lets-hikes",
+        "displayName": "lets_hike"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "label": {
+            "type": "string"
+        },
+        "image": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images",
+                "files",
+                "videos",
+                "audios"
+            ]
+        }
+    }
+}

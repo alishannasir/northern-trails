@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_explores",
+  "info": {
+    "displayName": "explore"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "explore_card": {
+      "type": "component",
+      "component": "shared.cards",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

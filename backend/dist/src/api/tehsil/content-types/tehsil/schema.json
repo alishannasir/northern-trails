@@ -1,0 +1,23 @@
+{
+    "kind": "collectionType",
+    "collectionName": "tehsils",
+    "info": {
+        "singularName": "tehsil",
+        "pluralName": "tehsils",
+        "displayName": "Tehsil"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string"
+        },
+        "district": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::district.district"
+        }
+    }
+}

@@ -5,18 +5,20 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "images": {
+    "logo_icon": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
       ]
+    },
+    "slide": {
+      "type": "component",
+      "component": "hero-section.slide",
+      "repeatable": true
     }
   },
   "config": {}

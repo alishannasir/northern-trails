@@ -1,0 +1,16 @@
+# Strapi specific ignore
+node_modules/
+.tmp/
+.cache/
+build/
+dist/
+exports/
+.env
+.env*
+database/*.db
+database/*.sqlite
+database/*.sqlite3
+.strapi-updater.json
+.strapi-cloud.json
+license.txt
+.strapi/

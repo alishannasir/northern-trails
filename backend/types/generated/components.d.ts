@@ -1,5 +1,23 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface HeroSectionSlide extends Struct.ComponentSchema {
+  collectionName: 'components_hero_section_slides';
+  info: {
+    displayName: 'slide';
+  };
+  attributes: {
+    background_images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    description: Schema.Attribute.String;
+    episode_label: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    nav_left_label: Schema.Attribute.String;
+    nav_right_label: Schema.Attribute.String;
+  };
+}
+
 export interface SectionsAllAboutHiking extends Struct.ComponentSchema {
   collectionName: 'components_sections_all_about_hikings';
   info: {
@@ -7,6 +25,7 @@ export interface SectionsAllAboutHiking extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -28,11 +47,8 @@ export interface SectionsHero extends Struct.ComponentSchema {
     displayName: 'hero';
   };
   attributes: {
-    images: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    title: Schema.Attribute.String;
+    logo_icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    slide: Schema.Attribute.Component<'hero-section.slide', true>;
   };
 }
 
@@ -88,6 +104,7 @@ export interface SharedLinkItem extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'hero-section.slide': HeroSectionSlide;
       'sections.all-about-hiking': SectionsAllAboutHiking;
       'sections.explore': SectionsExplore;
       'sections.hero': SectionsHero;

@@ -58,6 +58,8 @@ export interface SectionsWhatsNew extends Struct.ComponentSchema {
     displayName: 'whats_new';
   };
   attributes: {
+    layout: Schema.Attribute.Enumeration<['equal', 'asymmetric']> &
+      Schema.Attribute.DefaultTo<'equal'>;
     title: Schema.Attribute.String;
     trails: Schema.Attribute.Relation<'oneToMany', 'api::trail.trail'>;
   };

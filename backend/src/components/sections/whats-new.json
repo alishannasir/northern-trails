@@ -12,6 +12,14 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::trail.trail"
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "equal",
+        "asymmetric"
+      ],
+      "default": "equal"
     }
   },
   "config": {}

@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_hero_section_slides",
+  "info": {
+    "displayName": "slide"
+  },
+  "options": {},
+  "attributes": {
+    "background_images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "nav_left_label": {
+      "type": "string"
+    },
+    "nav_right_label": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "episode_label": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

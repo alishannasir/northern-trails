@@ -1,7 +1,28 @@
-/**
- * tehsil controller
- */
-
 import { factories } from '@strapi/strapi';
 
-export default factories.createCoreController('api::tehsil.tehsil');
+export default factories.createCoreController('api::tehsil.tehsil', ({ strapi }) => ({
+    async find(ctx) {
+        ctx.query.populate = {
+            district: {
+                populate: {
+                    division: { populate: {} }
+                }
+            }
+        };
+        const { data, meta } = await super.find(ctx);
+        return { data, meta };
+    },
+    async findOne(ctx) {
+        ctx.query.populate = {
+            district: {
+                populate: {
+                    division: { populate: {} }
+                }
+            }
+        };
+        const { data, meta } = await super.findOne(ctx);
+        return { data, meta };
+    }
+}));
+
+

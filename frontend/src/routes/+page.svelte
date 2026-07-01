@@ -1,8 +1,9 @@
 <script lang="ts">
-	import HomeSections from '$lib/components/home/HomeSections.svelte';
-	import type { PageData } from './$types';
+	import HomeSections from "$lib/components/home/HomeSections.svelte";
+	import type { PageData } from "./$types";
 
 	let { data }: { data: PageData } = $props();
+	console.log(data, "home data");
 </script>
 
 <svelte:head>

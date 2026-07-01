@@ -113,6 +113,12 @@
     },
     "gps_coordinates_end": {
       "type": "string"
+    },
+    "seasons": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::season.season",
+      "mappedBy": "trails"
     }
   }
 }

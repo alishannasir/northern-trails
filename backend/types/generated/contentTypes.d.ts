@@ -662,6 +662,35 @@ export interface ApiLetsHikeLetsHike extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiSeasonSeason extends Struct.CollectionTypeSchema {
+  collectionName: 'seasons';
+  info: {
+    displayName: 'Season';
+    pluralName: 'seasons';
+    singularName: 'season';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::season.season'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    trails: Schema.Attribute.Relation<'manyToMany', 'api::trail.trail'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTehsilTehsil extends Struct.CollectionTypeSchema {
   collectionName: 'tehsils';
   info: {
@@ -737,6 +766,7 @@ export interface ApiTrailTrail extends Struct.CollectionTypeSchema {
       true
     >;
     publishedAt: Schema.Attribute.DateTime;
+    seasons: Schema.Attribute.Relation<'manyToMany', 'api::season.season'>;
     slug: Schema.Attribute.String;
     starting_point: Schema.Attribute.String;
     summary: Schema.Attribute.String;
@@ -1273,6 +1303,7 @@ declare module '@strapi/strapi' {
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::lets-hike.lets-hike': ApiLetsHikeLetsHike;
+      'api::season.season': ApiSeasonSeason;
       'api::tehsil.tehsil': ApiTehsilTehsil;
       'api::trail.trail': ApiTrailTrail;
       'plugin::content-releases.release': PluginContentReleasesRelease;

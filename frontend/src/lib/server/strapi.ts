@@ -37,11 +37,7 @@ export async function getSingleType<T>(
 
 export async function getHomePage(): Promise<HomePage | null> {
 	const result = await strapiFetch<StrapiResponse<HomePage>>('/home-page', {
-
-		'populate[sections][populate]': '*',
-		'populate[sections][on][sections.whats-new][populate][trails][populate][photos]': '*',
-		'populate[sections][on][sections.explore][populate][explore_card][populate][image]': '*'
-
+		populate: '*'
 	});
 	return result.data ?? null;
 }

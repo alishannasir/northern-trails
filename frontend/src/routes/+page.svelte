@@ -3,6 +3,7 @@
 	import type { PageData } from "./$types";
 
 	let { data }: { data: PageData } = $props();
+	// svelte-ignore state_referenced_locally
 	console.log(data, "home data");
 </script>
 
